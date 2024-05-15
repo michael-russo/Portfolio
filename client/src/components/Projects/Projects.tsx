@@ -3,11 +3,13 @@
 import React from "react";
 import "./Projects.css";
 import Header from "../Header/Header";
+import ProjectsHeader from "../Header/ProjectsHeader";
 
 const Projects: React.FC = () => {
   return (
     <div className="App">
       <Header />
+      <ProjectsHeader />
       <main>
         <section id="projects">
           <h2>Projects</h2>

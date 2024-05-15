@@ -1,21 +1,21 @@
+// src/components/Header.tsx
+
 import React from "react";
-import "./Header.css";
+import { Link } from "react-router-dom";
 
 const Header: React.FC = () => {
   return (
     <header>
-      <h1>Michael Russo Portfolio</h1>
+      <h1>My Portfolio</h1>
       <nav>
         <ul>
           <li>
-            <a href="#about">About</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a href="#projects">Projects</a>
+            <Link to="/about">About</Link>
           </li>
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
+          {/* Add more navigation items here */}
         </ul>
       </nav>
     </header>

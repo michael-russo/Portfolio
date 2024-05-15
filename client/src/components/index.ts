@@ -1,4 +1,4 @@
-export * from "./About";
-export * from "./Contact";
-export * from "./Header";
-export * from "./Projects";
+export { default as About } from "./About/About";
+export { default as Contact } from "./Contact/Contact";
+export { default as Header } from "./Header/Header";
+export { default as Projects } from "./Projects/Projects";

@@ -23,3 +23,13 @@ nav ul li a {
   color: #fff;
   text-decoration: none;
 }
+
+#BasicBoard {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  place-items: center; /* Center horizontally and vertically */
+  width: 60%; /* Set a maximum width for the chessboard */
+  margin: 0 auto; /* Center the chessboard */
+  padding: 3rem;
+}

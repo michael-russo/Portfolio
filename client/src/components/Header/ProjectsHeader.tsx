@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 const ProjectsHeader: React.FC = () => {
   return (
     <header>
-      <h2>Projects</h2>
       <nav>
         <ul>
           <li>

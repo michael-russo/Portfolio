@@ -12,7 +12,7 @@ const ProjectsHeader: React.FC = () => {
             <Link to="/projects/chess">Chess</Link>
           </li>
           <li>
-            <Link to="/projects/face-controller">Face Controller</Link>
+            <Link to="/projects/webcam">Face Controller</Link>
           </li>
           <li>
             <Link to="/projects/stock-bot">Stock Bot</Link>

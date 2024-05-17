@@ -3,7 +3,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import App from "./App";
-import { About, Chess, Contact, Projects } from "./components";
+import { About, Chess, Contact, Projects, WebcamGame } from "./components";
 
 const AppRoutes: React.FC = () => {
   return (
@@ -15,6 +15,7 @@ const AppRoutes: React.FC = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/projects/chess" element={<Chess />} />
+        <Route path="/projects/webcam" element={<WebcamGame />} />
       </Routes>
     </Router>
   );

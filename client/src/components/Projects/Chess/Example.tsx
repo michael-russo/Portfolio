@@ -5,10 +5,6 @@ function ExampleComponent() {
   const [count, setCount] = useState(0);
 
   // useEffect hook with no dependencies
-  useEffect(() => {
-    // This code runs after every render
-    console.log("Component rendered");
-  });
 
   // useEffect hook with dependencies
   useEffect(() => {
@@ -20,11 +16,22 @@ function ExampleComponent() {
   const incrementCount = () => {
     setCount(count + 1);
   };
+  const [count1, setCount1] = useState(0);
 
-  // JSX to render the component
+  useEffect(() => {
+    // Function to increment count1 every 2 seconds
+    const intervalId = setInterval(() => {
+      setCount1((prevCount1) => prevCount1 + 1);
+    }, 2000);
+
+    // Cleanup function to clear interval when component unmounts
+    return () => clearInterval(intervalId);
+  }, []);
+
+  // JSX to rend∂er the component
   return (
     <div>
-      <p>Count: {count}</p>
+      <p>Count: {count1}</p>
       <button onClick={incrementCount}>Increment Count</button>
     </div>
   );

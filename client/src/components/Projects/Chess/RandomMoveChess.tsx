@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
-import { Chess } from "chess.js";
+import { useState } from "react";
+import { Chess, Square } from "chess.js";
 import { Chessboard } from "react-chessboard";
 
 type ChessMove = {
   from: string;
   to: string;
-  promotion: string;
+  promotion?: string;
 };
 
 export default function PlayRandomMoveEngine() {
@@ -21,10 +21,6 @@ export default function PlayRandomMoveEngine() {
     return result; // null if the move was illegal, the move object if the move was legal
   }
 
-  useEffect(() => {
-    console.log("New FEN:", fen);
-  }, [fen]); // Dependency array
-
   function makeRandomMove() {
     const possibleMoves = game.moves() as unknown as ChessMove[];
     if (game.isGameOver() || game.isDraw() || possibleMoves.length === 0)
@@ -33,18 +29,31 @@ export default function PlayRandomMoveEngine() {
     makeAMove(possibleMoves[randomIndex]);
   }
 
-  function onDrop(sourceSquare: any, targetSquare: any) {
-    // console.log("onDrop", sourceSquare, targetSquare);
-    const move = makeAMove({
-      from: sourceSquare,
-      to: targetSquare,
-      promotion: "q", // always promote to a queen for example simplicity
+  function onDrop(sourceSquare: any, targetSquare: any, piece: any) {
+    const validMoves = game.moves({ square: sourceSquare as Square });
+
+    let isValid = false;
+
+    validMoves.forEach((move) => {
+      if (move.includes(targetSquare)) {
+        isValid = true;
+      }
     });
 
-    // illegal move
-    if (move === null) return false;
-    setTimeout(makeRandomMove, 500);
-    return true;
+    if (isValid) {
+      const move = makeAMove({
+        from: sourceSquare,
+        to: targetSquare,
+        promotion: "q", // always promote to a queen for example simplicity
+      });
+
+      // illegal move
+      if (move === null) return false;
+      setTimeout(makeRandomMove, 500);
+      return true;
+    }
+
+    return false;
   }
 
   return <Chessboard position={fen} onPieceDrop={onDrop} />;

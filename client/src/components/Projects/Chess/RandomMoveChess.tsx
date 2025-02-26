@@ -16,7 +16,6 @@ export default function PlayRandomMoveEngine() {
   function makeAMove(move: ChessMove) {
     const gameCopy = game;
     const result = gameCopy.move(move);
-    console.log(game.getCastlingRights("w"));
     setGame(gameCopy);
     setFen(gameCopy.fen());
     return result; // null if the move was illegal, the move object if the move was legal

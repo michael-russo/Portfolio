@@ -24,7 +24,7 @@ export default function PlayRandomMoveEngine() {
   function makeRandomMove() {
     const possibleMoves = game.moves() as unknown as ChessMove[];
     if (game.isGameOver() || game.isDraw() || possibleMoves.length === 0)
-      return; // exit if the game is over
+      return;
     const randomIndex = Math.floor(Math.random() * possibleMoves.length);
     makeAMove(possibleMoves[randomIndex]);
   }
@@ -44,7 +44,7 @@ export default function PlayRandomMoveEngine() {
       const move = makeAMove({
         from: sourceSquare,
         to: targetSquare,
-        promotion: "q", // always promote to a queen for example simplicity
+        promotion: "q",
       });
 
       // illegal move

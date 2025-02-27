@@ -5,7 +5,6 @@ import "./Chess.css";
 import Header from "../../Header/Header";
 import ProjectsHeader from "../../Header/ProjectsHeader";
 import PlayRandomMoveEngine from "./RandomMoveChess";
-import ExampleComponent from "./Example";
 
 const Chess: React.FC = () => {
   return (
@@ -13,9 +12,6 @@ const Chess: React.FC = () => {
       <Header />
       <ProjectsHeader />
       <main>
-        <div id="BasicBoard">
-          <ExampleComponent />
-        </div>
         <div id="BasicBoard">
           <PlayRandomMoveEngine />
         </div>

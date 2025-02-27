@@ -18,7 +18,7 @@ export default function PlayRandomMoveEngine() {
     const result = gameCopy.move(move);
     setGame(gameCopy);
     setFen(gameCopy.fen());
-    return result; // null if the move was illegal, the move object if the move was legal
+    return result;
   }
 
   function makeRandomMove() {

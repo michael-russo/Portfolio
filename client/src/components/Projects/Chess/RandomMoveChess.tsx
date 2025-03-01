@@ -47,7 +47,6 @@ export default function PlayRandomMoveEngine() {
         promotion: "q",
       });
 
-      // illegal move
       if (move === null) return false;
       setTimeout(makeRandomMove, 500);
       return true;

@@ -8,3 +8,5 @@ npm install
 npm start
 
 ```
+
+Portfolio includes chess bot and CV game.
